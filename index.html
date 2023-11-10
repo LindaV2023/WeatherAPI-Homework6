@@ -29,26 +29,66 @@
                     <button class="search-btn">Search</button>
                     <div class="history"></div>
                 </div>
-                <div class="col-9">
-                    <div class="current-weather">
-                        <h5>Current Weather</h5>
-                        <div class="weather"></div>
+
+                <div class="card">
+                    <ul class="list-group list-group-flush" id="search-history-list">
+                        
+                    </ul>
+                <buttonid="clear-history" class="btn btn-sm btn-secondary hide">Clear History</button>
+                </div>
+
+                </div>
+            </div>
+        </div>
+
+
+                <div class="weather-content" class="col-12 col-md-9 hide">
+                    <div class = "row">
+                        <div class="col-12">
+                            <div class="city-info border rounded p-2"></div>
+                    
+                        <h5 id="current-city">Current Weather<small class="text-muted" id="current-date"> </small></h5>
+
+                            <p class="mb-0">Temperature:<span id="current-temp"></span></p>
+                            <p class="mb-0">Humidity:<span id="current-humidity"></span></p>
+                            <p class="mb-0">Wind Speed:<span id="current-wind"></span></p>
+                            <p class="mb-0">UV Index:<span id="current-uv"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-12">
+
+    </div>
+    <div class="weather"></div>
                     </div>
                    
             <div class="weather">
                
 
-                </div>
-                <div class="city">City</div>
-                <div class="date">id="current-date"</div>
-                <div class="temp">0°c</div>
-                <div class="desc">Cloudy</div>
-            </div>
-        
-
-        <div class="forecast">
+            </div>  
+            <div class="row">
+                <div class="col-12">
             <h5>5-Day Forecast</h5>
-            <div class="forecast-container" class="row"></div>
+            </div>
+            </div>
+            <div id="five-day-forecast" class="row">
+                <div class="col-2">
+                    <div class="card">
+                        <div class="card-body" style="background-color: darkgreen; color: white;">
+                            <h5 class="card-title">Date</h5>
+                            <i class="fas fa-cloud"></i>
+                            <p class="card-text">Temp: 0°c</p>
+                            <p class="card-text">Humidity: 0%</p>
+                            </div>
+                            </div>
+
+                    </div>
+                </div>
+            <!-- <div class="forecast-container" class="row"></div>
             <div id="weatherCard" class="card ml-3 mt-2">
                 <div class="card-body" style="background-color: darkgreen; color: white;">
             <div class="city">City</div>
@@ -71,7 +111,7 @@
                 <div class="date">01/01/2020</div>
                 <div class="temp">0°c</div>
                 <div class="desc">Cloudy</div>
-             </div>
+             </div> -->
         </div>
     </div>
     </div>
