@@ -1,0 +1,74 @@
+.weather {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+h1.title {
+    color: #fff;
+    background-color: darkgreen;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    height: 50px;
+    margin: 0, 5, 0, 5;
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+
+
+
+html, body, .container-fluid, .content-row {
+    height: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+.city-btn:hover {
+    background-color: #f6f5f5;
+    cursor: pointer;
+}
+
+.card {
+    background-color: #cce5ff;
+}
+
+/* .weather .weather-card {
+    display: table-row;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.weather .weather-box {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+} */
+
+/* .weather .weather-box .weather-box-content {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.weather .weather-box .weather-box-content .weather-box-content-left {
+    width: 50%;
+    float: left;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.weather .weather-box .weather-box-content .weather-box-content-left .weather-box-content-left-top {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+} */
+
