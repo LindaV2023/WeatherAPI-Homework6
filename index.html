@@ -21,28 +21,71 @@
     <h1 class="title">Weather Dashboard</h1>
         </div>
 
-        <div class="container main-container">
-            <div class="row">
-                <div class="col-3 searchCol">
+        <div class="row content-row">
+            <div class="col-12 col-md-3 bg-light pt-3">
+                <!-- <div class="col-md-3" id="search-city-input"> -->
                     <h5>Search for a City:</h5>
-                    <input type="text" placeholder="Which city?" class="search-bar">
-                    <button class="search-btn">Search</button>
-                    <div class="history"></div>
-                </div>
+                    <form>
+                        <div class="form-group input-group">
+                            <input type="text" class="form-control" id="search-city-input" placeholder="City Name">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" id="search-city-button">Search</button>
+                            
+                                </div>
+                            </div>
+                            </form>
 
+                <!-- Search History -->
                 <div class="card">
                     <ul class="list-group list-group-flush" id="search-history-list">
-                        
-                    </ul>
-                <buttonid="clear-history" class="btn btn-sm btn-secondary hide">Clear History</button>
-                </div>
-
-                </div>
+                        </ul>
+                        <button id="clear-history" class="btn btn-sm btn-secondary hide">Clear History</button>
+                </div>                        
             </div>
+            <div id="weather-content" class="col-12 col-md-9 hide">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="city-info border rounded my-3 px-3 py-3">
+                            <h2 id="current-city">Current City<small class="text-muted" id="current-date"> </small></h2>
+
+                            <p class="mb-0">Temperature:<span id="current-temp"></span></p>
+                            <p class="mb-0">Humidity:<span id="current-humidity"></span></p>
+                            <p class="mb-0">Wind Speed:<span id="current-wind"></span></p>
+                            <p class="mb-0">UV Index:<span id="current-uv"></span></p>
+                        </div>
+                    </div>
+                </div>
+        
+<div class="row">
+    <div class="col-12">
+        <h3>5-Day Forecast</h3>
+    </div>
+</div>
+<div id="five-day-forecast" class="row">
+    <div class="col-2">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Date</h5>
+                <i class="fas fa-cloud"></i>
+                <p class="card-text">Temp: 0°c</p>
+                <p class="card-text">Humidity: 0%</p>
+                </div>
+                </div>
+                </div>
+
+           
         </div>
+    </div>
+
+</div>
 
 
-                <div class="weather-content" class="col-12 col-md-9 hide">
+                        <h2 id="city-name"></h2>
+                        <h5 id="current-date"></h5>
+                        <img id="current-icon" src="" alt="Weather Icon">
+                </div>
+            
+
                     <div class = "row">
                         <div class="col-12">
                             <div class="city-info border rounded p-2"></div>
@@ -82,6 +125,7 @@
                             <h5 class="card-title">Date</h5>
                             <i class="fas fa-cloud"></i>
                             <p class="card-text">Temp: 0°c</p>
+                            <p class="card-text">Wind Speed</p>
                             <p class="card-text">Humidity: 0%</p>
                             </div>
                             </div>

@@ -19,7 +19,15 @@ h1.title {
     overflow: hidden;
 } */
 
+#search-city-button.btn {
+    background-color: darkgreen;
+    border-color: green;
+}
 
+.btn btn-primary {
+    background-color: darkgreen;
+    border-color: green;
+}
 
 
 
