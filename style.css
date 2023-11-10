@@ -13,7 +13,14 @@ h1.title {
     height: 50px;
     margin: 0, 5, 0, 5;
 }
-/* .container {
+.container {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+/* .current-container {
+    display: flex;
+    flex-direction: row;
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
@@ -48,35 +55,86 @@ html, body, .container-fluid, .content-row {
     background-color: #cce5ff;
 }
 
-/* .weather .weather-card {
-    display: table-row;
+.card-body {
+    background-color: #cce5ff;
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
 }
 
-.weather .weather-box {
+.days-forecast {
+    /* display: flex; */
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+} 
+.weather-cards {
+    display: flex;
+    gap:20px;
+}
+
+.weather-cards .card {
+    background-color: darkgreen;
+    color: white;
+    width: 100%;
+    align-items: center;
+    list-style: none;
+    padding: 18px 16px;
+}
+.weather {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
-} */
 
-/* .weather .weather-box .weather-box-content {
+
+}
+
+.weather-card {
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
 }
 
-.weather .weather-box .weather-box-content .weather-box-content-left {
-    width: 50%;
-    float: left;
+.weather-input
+{
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}   
+
+.weather-input input {
+    width: 100%;
     margin: 0 auto;
     overflow: hidden;
 }
 
-.weather .weather-box .weather-box-content .weather-box-content-left .weather-box-content-left-top {
+.weather-content {
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
-} */
+}
+
+.weather-info {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.weather-data {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}  
+
+.current-weather {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
 

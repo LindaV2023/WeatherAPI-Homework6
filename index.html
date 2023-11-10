@@ -17,19 +17,21 @@
 
 </head>
 <body>
+    
     <div class="container">
     <h1 class="title">Weather Dashboard</h1>
         </div>
 
-        <div class="row content-row">
-            <div class="col-12 col-md-3 bg-light pt-3">
-                <!-- <div class="col-md-3" id="search-city-input"> -->
+        <div class="container">
+            <div class="weather-input">
+         <!-- <div class="col-12 col-md-3 bg-light pt-3"> -->
+                 <div class="col-md-3" id="search-city-input"> 
                     <h5>Search for a City:</h5>
                     <form>
                         <div class="form-group input-group">
                             <input type="text" class="form-control" id="search-city-input" placeholder="City Name">
                             <div class="input-group-append">
-                                <button class="btn btn-primary" id="search-city-button">Search</button>
+                                <button class="btn btn-info" type="button" id="search-city-button"><i class="fas fa-search"></i></button>
                             
                                 </div>
                             </div>
@@ -42,53 +44,23 @@
                         <button id="clear-history" class="btn btn-sm btn-secondary hide">Clear History</button>
                 </div>                        
             </div>
+            <!-- <div class="current-container"> -->
             <div id="weather-content" class="col-12 col-md-9 hide">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="city-info border rounded my-3 px-3 py-3">
-                            <h2 id="current-city">Current City<small class="text-muted" id="current-date"> </small></h2>
 
-                            <p class="mb-0">Temperature:<span id="current-temp"></span></p>
-                            <p class="mb-0">Humidity:<span id="current-humidity"></span></p>
-                            <p class="mb-0">Wind Speed:<span id="current-wind"></span></p>
-                            <p class="mb-0">UV Index:<span id="current-uv"></span></p>
-                        </div>
-                    </div>
-                </div>
-        
-<div class="row">
-    <div class="col-12">
-        <h3>5-Day Forecast</h3>
-    </div>
-</div>
-<div id="five-day-forecast" class="row">
-    <div class="col-2">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Date</h5>
-                <i class="fas fa-cloud"></i>
-                <p class="card-text">Temp: 0°c</p>
-                <p class="card-text">Humidity: 0%</p>
-                </div>
-                </div>
-                </div>
-
-           
-        </div>
-    </div>
-
-</div>
+    
+<!-- </div>
+</div> -->
 
 
                         <h2 id="city-name"></h2>
                         <h5 id="current-date"></h5>
                         <img id="current-icon" src="" alt="Weather Icon">
-                </div>
+                </div> 
             
 
                     <div class = "row">
                         <div class="col-12">
-                            <div class="city-info border rounded p-2"></div>
+                             <!-- <div class="city-info border rounded p-2"></div>  -->
                     
                         <h5 id="current-city">Current Weather<small class="text-muted" id="current-date"> </small></h5>
 
@@ -102,22 +74,11 @@
             </div>
         </div>
     </div>
-    <div class="row">
-    <div class="col-12">
-
-    </div>
-    <div class="weather"></div>
-                    </div>
                    
-            <div class="weather">
-               
-
-            </div>  
+            <!-- <div class="weather">
             <div class="row">
                 <div class="col-12">
             <h5>5-Day Forecast</h5>
-            </div>
-            </div>
             <div id="five-day-forecast" class="row">
                 <div class="col-2">
                     <div class="card">
@@ -129,9 +90,61 @@
                             <p class="card-text">Humidity: 0%</p>
                             </div>
                             </div>
+                        </div>
+                        </div>
 
                     </div>
-                </div>
+                </div> -->
+
+
+           <div class="days-forecast">
+            <h3>5-Day Forecast</h3>
+            <ul class="weather-cards">
+                <li class="card">
+                    <h3 class="date">Date</h3>
+                    <img class="icon" src="" alt="Weather Icon">
+                    <h4>Temp:</h4>
+                    <h4>Wind:</h4>
+                    <h4>Humidity:</h4>
+                </li>
+                <li class="card">
+                    <h3 class="date">Date</h3>
+                    <img class="icon" src="" alt="Weather Icon">
+                    <h4>Temp:</h4>
+                    <h4>Wind:</h4>
+                    <h4>Humidity:</h4>
+                </li>
+                <li class="card">
+                    <h3 class="date">Date</h3>
+                    <img class="icon" src="" alt="Weather Icon">
+                    <h4>Temp:</h4>
+                    <h4>Wind:</h4>
+                    <h4>Humidity:</h4>
+                </li>
+                <li class="card">
+                    <h3 class="date">Date</h3>
+                    <img class="icon" src="" alt="Weather Icon">
+                    <h4>Temp:</h4>
+                    <h4>Wind:</h4>
+                    <h4>Humidity:</h4>
+                </li>
+                <li class="card">
+                    <h3 class="date">Date</h3>
+                    <img class="icon" src="" alt="Weather Icon">
+                    <h4>Temp:</h4>
+                    <h4>Wind:</h4>
+                    <h4>Humidity:</h4>
+                </li>
+            </ul>
+           </div>
+
+
+
+
+
+
+
+
             <!-- <div class="forecast-container" class="row"></div>
             <div id="weatherCard" class="card ml-3 mt-2">
                 <div class="card-body" style="background-color: darkgreen; color: white;">
