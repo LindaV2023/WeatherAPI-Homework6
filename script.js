@@ -1,4 +1,6 @@
-var APIkey = c4ecf65965484e1b885ed4c23e413d46;
+var APIkey ="c4ecf65965484e1b885ed4c23e413d46";
+var API_key = "c4ecf65965484e1b885ed4c23e413d46";
+const API_KEY = "c4ecf65965484e1b885ed4c23e413d46";
 var weatherContent = $("#weather-content");
 
 
@@ -31,11 +33,14 @@ var weatherForecast = $("#weather-forecast");
 
 var cityList = [];
 
-var currentDate = moment().format("MM/DD/YYYY");
+var currentDate = moment().format('L');
 $("#current-date").text("(" + currentDate + ")");
 
-initailize();
-showClearHistoryButton();
+// var currentDate = moment().format("MM/DD/YYYY");
+// $("#current-date").text("(" + currentDate + ")");
+
+initailizeHistory();
+showClear();
 
 
 $(document).on("submit", function (event) {
@@ -49,8 +54,43 @@ $(document).on("submit", function (event) {
 
 });
 
-searchCityButton.on("click", function (event) {
-    event.preventDefault();
+// searchCityButton.on("click", function (event) {
+//     event.preventDefault();
+
+// const API_key = "c4ecf65965484e1b885ed4c23e413d46";
+
+const cityInput = document.querySelector("#search-city-input");
+
+const getWeatherDetails = (cityName, lat, lon) => {
+    const CURRENT_WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${API_key}`;
+    fetch(CURRENT_WEATHER_API_URL).then(res => res.json()).then(data => {
+        console.log(data);
+    }).catch(err => {
+        console.error(err);
+    });
+}
+
+const getCityCoordinates =() => {
+    const cityName = cityInput.value.trim();
+    if (cityName) return;
+
+    // console.log(cityName);
+
+    const GEOCODING_API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${API_key}`;
+    fetch(GEOCODING_API_URL).then(res => res.json() ).then(data => {
+    //     console.log(data);
+    // }).catch(err => {
+    //     console.error(err);
+    // });
+        if (data.length) return alert("No city found");
+        
+        const {name, lat, lon} = data[0];
+        getWeatherDetails(name,lat,lon);
+    });
+        getCityCoordinates(cityName);
+    } 
+    
+// searchCityButton.addEventListener("click", getCityCoordinates);
 
     var searchValue = searchCityInput.val().trim();
 
@@ -58,7 +98,8 @@ searchCityButton.on("click", function (event) {
     searchHistoryList(searchValue);
     searchCityInput.val("");
 
-});
+
+
 
 clearHistoryButton.on("click", function (event) {
 
@@ -78,7 +119,7 @@ searchHistoryList.on("click", "li.city-btn", function (event) {
 });
 
 function currentConditionsRequest(searchValue) {
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + key + "&units=imperial";
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=" + API_key + "&units=imperial";
 
     $.ajax({
         url: queryURL,
@@ -110,7 +151,7 @@ function currentConditionsRequest(searchValue) {
         });
 
         var countryCode = response.sys.country;
-        var forecastQueryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "," + countryCode + "&appid=" + key + "&units=imperial";
+        var forecastQueryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "," + countryCode + "&appid=" + API_key + "&units=imperial";
 
         $.ajax({
             url: forecastURL,
@@ -123,7 +164,7 @@ function currentConditionsRequest(searchValue) {
             $('#five-day-forecast').empty();
             for (var i = 1; i < response.list.length; i+=8) {
 
-                var forecastDataString = moment(response.list[i].dt_txt).format("MM/DD/YYYY");
+                var forecastDataString = moment(response.list[i].dt_txt).format("L");
                 console.log(forecastDataString);
 
                 var forecastCol = $("<div class='col-12 col-md-6 col-lg forecast-day mb-3'>");
@@ -144,7 +185,9 @@ function currentConditionsRequest(searchValue) {
                 forecastCardBody.append(forecastTemp);
                 forecastCardBody.append(forecastHumidity);
 
-                forecastIcon.attr("src", "https://openweathermap.org/img/w/" + response.list[i].weather[0].icon + ".png");
+                forecastIcon.attr("src", "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}");
+
+                // forecastIcon.attr("src", "https://openweathermap.org/img/w/" + response.list[i].weather[0].icon + ".png");
                 forecastIcon.attr("alt", response.list[i].weather[0].main);
                 forecastDate.text(forecastDataString);
                 forecastTemp.text(response.list[i].main.temp);

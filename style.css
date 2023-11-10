@@ -76,7 +76,7 @@ html, body, .container-fluid, .content-row {
 .weather-cards .card {
     background-color: darkgreen;
     color: white;
-    width: 100%;
+    width: calc(100% / 5);
     align-items: center;
     list-style: none;
     padding: 18px 16px;
